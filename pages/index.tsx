@@ -1,123 +1,561 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import {
+  Box,
+  Text,
+  UnorderedList,
+  ListItem
+} from '@chakra-ui/react';
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
+
+  const inteviwees: {
+    id: number;
+    name: string;
+    mockInteviw: {
+      name: string;
+      mark: number;
+    }[];
+    averageMockNumbe: number;
+    dateWiseApplication: {
+      date: string;
+      number: number;
+    }[];
+    totalApplication: number;
+    projectsMark: {
+      name: string;
+      mark: number;
+    }[];
+    averageProjectMark: number;
+    TotalAverageMark: number;
+  }[] = [
+      {
+        id: 1,
+        name: "Mosharaf hossain",
+        mockInteviw: [
+          {
+            name: "Romel Mahmud",
+            mark: 66,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 66,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 67,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 65,
+          }
+        ],
+        averageMockNumbe: 20,
+        dateWiseApplication: [
+          {
+            date: "20.12.22",
+            number: 5,
+          },
+          {
+            date: "21.12.22",
+            number: 5,
+          },
+          {
+            date: "22.12.22",
+            number: 5,
+          },
+          {
+            date: "23.12.22",
+            number: 5,
+          },
+          {
+            date: "24.12.22",
+            number: 5,
+          },
+          {
+            date: "25.12.22",
+            number: 5,
+          },
+          {
+            date: "26.12.22",
+            number: 5,
+          },
+          {
+            date: "27.12.22",
+            number: 5,
+          },
+          {
+            date: "28.12.22",
+            number: 5,
+          },
+          {
+            date: "29.12.22",
+            number: 5,
+          },
+          {
+            date: "30.12.22",
+            number: 5,
+          },
+          {
+            date: "31.12.22",
+            number: 5,
+          },
+        ],
+        totalApplication: 20,
+        projectsMark: [
+          {
+            name: "Romel Mahmud",
+            mark: 30,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 30,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 30,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 30,
+          }
+        ],
+        averageProjectMark: 98,
+        TotalAverageMark: 89,
+      },
+      {
+        id: 2,
+        name: "Romel Mahmud",
+        mockInteviw: [
+          {
+            name: "Mosharaf Hossain",
+            mark: 66,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 68,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 68,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 67,
+          }
+        ],
+        averageMockNumbe: 20,
+        dateWiseApplication: [
+          {
+            date: "20.12.22",
+            number: 5,
+          },
+          {
+            date: "21.12.22",
+            number: 5,
+          },
+          {
+            date: "22.12.22",
+            number: 5,
+          },
+          {
+            date: "23.12.22",
+            number: 5,
+          },
+          {
+            date: "24.12.22",
+            number: 5,
+          },
+          {
+            date: "25.12.22",
+            number: 5,
+          },
+          {
+            date: "26.12.22",
+            number: 5,
+          },
+          {
+            date: "27.12.22",
+            number: 5,
+          },
+          {
+            date: "28.12.22",
+            number: 5,
+          },
+          {
+            date: "29.12.22",
+            number: 5,
+          },
+          {
+            date: "30.12.22",
+            number: 5,
+          },
+          {
+            date: "31.12.22",
+            number: 5,
+          },
+        ],
+        totalApplication: 20,
+        projectsMark: [
+          {
+            name: "Romel Mahmud",
+            mark: 30,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 30,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 30,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 30,
+          }
+        ],
+        averageProjectMark: 98,
+        TotalAverageMark: 89,
+      },
+      {
+        id: 3,
+        name: "Muhammed Rakibul Hasan",
+        mockInteviw: [
+          {
+            name: "Mosharaf Hossain",
+            mark: 65,
+          },
+          {
+            name: "Romel Mahmud",
+            mark: 69,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 68,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 68,
+          }
+        ],
+        averageMockNumbe: 20,
+        dateWiseApplication: [
+          {
+            date: "20.12.22",
+            number: 5,
+          },
+          {
+            date: "21.12.22",
+            number: 5,
+          },
+          {
+            date: "22.12.22",
+            number: 5,
+          },
+          {
+            date: "23.12.22",
+            number: 5,
+          },
+          {
+            date: "24.12.22",
+            number: 5,
+          },
+          {
+            date: "25.12.22",
+            number: 5,
+          },
+          {
+            date: "26.12.22",
+            number: 5,
+          },
+          {
+            date: "27.12.22",
+            number: 5,
+          },
+          {
+            date: "28.12.22",
+            number: 5,
+          },
+          {
+            date: "29.12.22",
+            number: 5,
+          },
+          {
+            date: "30.12.22",
+            number: 5,
+          },
+          {
+            date: "31.12.22",
+            number: 5,
+          },
+        ],
+        totalApplication: 20,
+        projectsMark: [
+          {
+            name: "Romel Mahmud",
+            mark: 30,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 30,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 30,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 30,
+          }
+        ],
+        averageProjectMark: 98,
+        TotalAverageMark: 89,
+      },
+      {
+        id: 4,
+        name: "Md Mehedi Ahsan",
+        mockInteviw: [
+          {
+            name: "Mosharaf Hossain",
+            mark: 64,
+          },
+          {
+            name: "Romel Mahmud",
+            mark: 67,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 67,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 68,
+          }
+        ],
+        averageMockNumbe: 20,
+        dateWiseApplication: [
+          {
+            date: "20.12.22",
+            number: 5,
+          },
+          {
+            date: "21.12.22",
+            number: 5,
+          },
+          {
+            date: "22.12.22",
+            number: 5,
+          },
+          {
+            date: "23.12.22",
+            number: 5,
+          },
+          {
+            date: "24.12.22",
+            number: 5,
+          },
+          {
+            date: "25.12.22",
+            number: 5,
+          },
+          {
+            date: "26.12.22",
+            number: 5,
+          },
+          {
+            date: "27.12.22",
+            number: 5,
+          },
+          {
+            date: "28.12.22",
+            number: 5,
+          },
+          {
+            date: "29.12.22",
+            number: 5,
+          },
+          {
+            date: "30.12.22",
+            number: 5,
+          },
+          {
+            date: "31.12.22",
+            number: 5,
+          },
+        ],
+        totalApplication: 20,
+        projectsMark: [
+          {
+            name: "Romel Mahmud",
+            mark: 30,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 80,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 80,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 90,
+          }
+        ],
+        averageProjectMark: 98,
+        TotalAverageMark: 89,
+      },
+      {
+        id: 4,
+        name: "Rajib Sarker",
+        mockInteviw: [
+          {
+            name: "Mosharaf Hossain",
+            mark: 65,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 68,
+          },
+          {
+            name: "Romel Mahmud",
+            mark: 67,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 67,
+          }
+        ],
+        averageMockNumbe: 20,
+        dateWiseApplication: [
+          {
+            date: "20.12.22",
+            number: 2,
+          },
+          {
+            date: "21.12.22",
+            number: 1,
+          },
+          {
+            date: "22.12.22",
+            number: 1,
+          },
+          {
+            date: "23.12.22",
+            number: 9,
+          },
+          {
+            date: "24.12.22",
+            number: 3,
+          },
+          {
+            date: "25.12.22",
+            number: 4,
+          },
+          {
+            date: "26.12.22",
+            number: 1,
+          },
+          {
+            date: "27.12.22",
+            number: 4,
+          },
+          {
+            date: "28.12.22",
+            number: 5,
+          },
+          {
+            date: "29.12.22",
+            number: 1,
+          },
+          {
+            date: "30.12.22",
+            number: 5,
+          },
+          {
+            date: "31.12.22",
+            number: 0,
+          },
+        ],
+        totalApplication: 20,
+        projectsMark: [
+          {
+            name: "Romel Mahmud",
+            mark: 30,
+          },
+          {
+            name: "Muhammed Rakibul Hasan",
+            mark: 80,
+          },
+          {
+            name: "Md Mehedi Ahsan",
+            mark: 80,
+          },
+          {
+            name: "Rajib Sarker",
+            mark: 90,
+          }
+        ],
+        averageProjectMark: 98,
+        TotalAverageMark: 89,
+      },
+    ];
+
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-    </>
+    <div className='container'>
+      {
+        inteviwees.map((int, i) =>
+          <Box key={i} border='2px' borderColor='gray.200' bg='cyan.800' w='100%' p={4} color='white' m={4} borderRadius="xl">
+            <Text pb="2" fontSize='3xl'>Performance tabulation</Text>
+            <Box display='flex' w='100%'>
+              <Box flex='1'>
+                <Text>
+                  {int.name}
+                </Text>
+              </Box>
+              <Box flex='1'>
+                <Text pb={2}>Mock Interview numbers by -</Text>
+                <UnorderedList pl={1}>
+                  {
+                    int.mockInteviw.map((mock, i) =>
+                      <ListItem key={i}>
+                        <span>{mock.name}</span> = <span>{mock.mark}</span>
+                      </ListItem>
+                    )
+                  }
+                </UnorderedList>
+                <br />
+                <Text>* Average Number = </Text>
+              </Box>
+              <Box px={4}>
+                <Text pb={2}>Application Number By Date</Text>
+                <UnorderedList pl={4}>
+                  {
+                    int.dateWiseApplication.map((dap, i) =>
+                      <ListItem key={i}>
+                        <span>{dap.date}</span> = <span>{dap.number}</span>
+                      </ListItem>
+                    )
+                  }
+                </UnorderedList>
+                <Text>Total Number :</Text>
+              </Box>
+              <Box flex='1'>
+                <Text pb={2}>Project Marks By -</Text>
+                <UnorderedList pl={4}>
+                  {int.projectsMark.map((pro, i) => <ListItem key={i}>
+                    <span>{pro.name}</span> = <span>{pro.mark}</span>
+                  </ListItem>)}
+                </UnorderedList>
+                <Text>Average Number</Text>
+              </Box>
+              <Box flex='1' pl="4">
+                <Text>Comment</Text>
+              </Box>
+            </Box>
+          </Box>
+        )
+      }
+    </div >
   )
 }
